@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleForum.Application", "SimpleForum.Application\SimpleForum.Application.csproj", "{E98E3836-F531-48A6-9F6E-4F3CB78D881C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleForum.DataAccess", "SimpleForum.DataAccess\SimpleForum.DataAccess.csproj", "{2A8715AE-AD57-4D26-8E0D-E0B17F29F3E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleForum.Domain", "SimpleForum.Domain\SimpleForum.Domain.csproj", "{A58FC7AA-DC4C-4B14-A487-105014FE07A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{417F9059-9DBF-4A78-94EA-B3014BEC52DB}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSSQL", "MSSQL", "{86657953-A2F5-4995-AA07-04578441C518}"
+	ProjectSection(SolutionItems) = preProject
+		Tables.sql = Tables.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleForum.AspServer", "SimpleForum.AspServer\SimpleForum.AspServer.csproj", "{466FC08B-911F-4639-97D4-423E99141619}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E98E3836-F531-48A6-9F6E-4F3CB78D881C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E98E3836-F531-48A6-9F6E-4F3CB78D881C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E98E3836-F531-48A6-9F6E-4F3CB78D881C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E98E3836-F531-48A6-9F6E-4F3CB78D881C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8715AE-AD57-4D26-8E0D-E0B17F29F3E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8715AE-AD57-4D26-8E0D-E0B17F29F3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8715AE-AD57-4D26-8E0D-E0B17F29F3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8715AE-AD57-4D26-8E0D-E0B17F29F3E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A58FC7AA-DC4C-4B14-A487-105014FE07A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58FC7AA-DC4C-4B14-A487-105014FE07A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58FC7AA-DC4C-4B14-A487-105014FE07A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58FC7AA-DC4C-4B14-A487-105014FE07A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{466FC08B-911F-4639-97D4-423E99141619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{466FC08B-911F-4639-97D4-423E99141619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{466FC08B-911F-4639-97D4-423E99141619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{466FC08B-911F-4639-97D4-423E99141619}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5B6A313-F5C6-4062-9BC6-45FCF94274E6}
+	EndGlobalSection
+EndGlobal
