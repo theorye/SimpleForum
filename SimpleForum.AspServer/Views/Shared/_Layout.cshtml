@@ -18,11 +18,24 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
+                        @* Content Management For Forum Dropdown *@
+                        <li class="nav-item dropdown text-white-50">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropDownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                Content Management
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropDownMenuLink">
+                                <a class="dropdown-item" asp-action="Index" asp-controller="Category" asp-area="Admin">Category</a>
+                                <a class="dropdown-item" asp-action="Index" asp-controller="Forum" asp-area="Admin">Forum</a>
+                                <a class="dropdown-item" asp-action="Index" asp-controller="Thread" asp-area="Admin">Threads</a>
+                                <a class="dropdown-item" asp-action="Index" asp-controller="Post" asp-area="Admin">Posts</a>
+                                <a class="dropdown-item">Users</a>
+                            </div>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Admin</a>
+                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
@@ -45,6 +58,7 @@
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/26ee623d8f.js" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>

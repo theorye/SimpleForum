@@ -11,7 +11,6 @@ namespace SimpleForum.DataAccess
     public class DbAccess
     {
         private SqlConnection Connection;
-        private SqlCommand Command;
         private string UniversalConnectionString;
 
         public SqlDataAdapter DataAdapter { get; set; }

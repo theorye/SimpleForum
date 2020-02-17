@@ -11,7 +11,7 @@ CREATE TABLE [Forums] (
 	[Description] varchar(255) NOT NULL,
 	[CreatedOn] datetime2(7) DEFAULT GETUTCDATE() NOT NULL,
 	[UpdatedOn] datetime2(7) DEFAULT GETUTCDATE() NOT NULL,
-	[CategoryId] int NOT NULL
+	[CategoryId] int
 );
 
 CREATE TABLE [Threads] (

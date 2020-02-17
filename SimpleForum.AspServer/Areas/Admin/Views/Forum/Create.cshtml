@@ -1,4 +1,4 @@
-﻿@model SimpleForum.Domain.Forum.Category
+﻿@model SimpleForum.Domain.Forum.Forum
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,7 +6,7 @@
 
 <br />
 <br />
-<h2 class="text-info">Create Category</h2>
+<h2 class="text-info">Create Forum</h2>
 <br />
 
 <form method="post" asp-action="Create">
@@ -20,6 +20,15 @@
                 <input asp-for="Title" class="form-control" />
             </div>
             <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Description" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <textarea asp-for="Description" class="form-control"></textarea>
+            </div>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
         <div class="form-group row">
             <div class="col-5 offset-2">

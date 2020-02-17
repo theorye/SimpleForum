@@ -7,30 +7,30 @@ using System.Text;
 
 namespace SimpleForum.DataAccess
 {
-    public class CategoryDataContext
+    public class ForumDataContext
     {
         private readonly DbAccess dbAccess;
 
-        public CategoryDataContext(DbAccess dbAccess)
+        public ForumDataContext(DbAccess dbAccess)
         {
             this.dbAccess = dbAccess;
         }
 
-        public List<Category> Read()
+        public List<Forum> Read()
         {
-            DbAccess dataAccess = dbAccess.InitializeQuery("SELECT * FROM [dbo].[Categories]");
+            DbAccess dataAccess = dbAccess.InitializeQuery("SELECT * FROM [dbo].[Forums]");
             var dt = new DataTable();
 
-            List<Category> categoryList;
+            List<Forum> forumList;
 
             try
             {
                 dataAccess.DataAdapter.Fill(dt);
 
-                categoryList = dt.AsEnumerable().Select(x => new Category
+                forumList = dt.AsEnumerable().Select(x => new Forum
                 {
                     Id = x.Field<int>("id"),
-                    Title = x.Field<string>("Title")           
+                    Title = x.Field<string>("Title")
                 }).ToList();
 
             }
@@ -39,7 +39,7 @@ namespace SimpleForum.DataAccess
                 throw new Exception(ex.Message);
             }
 
-            return categoryList;
+            return forumList;
         }
 
         public List<Category> GetOne(int id)
@@ -68,9 +68,9 @@ namespace SimpleForum.DataAccess
             return categoryList;
         }
 
-        public void Create(string title)
+        public void Create(Forum forum)
         {
-            DbAccess dataAccess = dbAccess.InitializeQuery("INSERT INTO[dbo].[Categories]([Title]) VALUES('" + title + "');");
+            DbAccess dataAccess = dbAccess.InitializeQuery($"INSERT INTO[dbo].[Forums]([Title],[Description]) VALUES('{forum.Title}','{forum.Description}');");
             var dt = new DataTable();
 
             try

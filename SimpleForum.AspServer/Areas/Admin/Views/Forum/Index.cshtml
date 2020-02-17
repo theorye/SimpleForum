@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SimpleForum.Domain.Forum.Category>
+﻿@model IEnumerable<SimpleForum.Domain.Forum.Forum>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,7 +9,7 @@
 <div class="border">
     <div class="row">
         <div class="col-6">
-            <h2 class="text-info">Category list</h2>
+            <h2 class="text-info">Forum list</h2>
         </div>
         <div class="col-6 text-right">
             <partial name="_CreateButtonPartial" />
@@ -43,7 +43,7 @@
         }
         else
         {
-            <p>No category exists...</p>
+            <p>No forums exists...</p>
         }
 
     </div>
