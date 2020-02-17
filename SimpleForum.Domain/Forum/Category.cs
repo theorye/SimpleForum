@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SimpleForum.Domain.Forum
 {
-    public class Forum
+    public class Category
     {
         public int Id { get; set; }
+
+        [Display(Name = "Category Name")]
         [Required]
         public string Title { get; set; }
+
         public string Description { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using SimpleForum.AspServer.Models;
 
 namespace SimpleForum.AspServer.Controllers
 {
+    [Area("User")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SimpleForum.AspServer.Models;
 using SimpleForum.DataAccess;
+using SimpleForum.Domain.Forum;
 
 namespace SimpleForum.AspServer.Controllers
 {
@@ -21,31 +23,42 @@ namespace SimpleForum.AspServer.Controllers
         {
             ForumModel FI = new ForumModel();
 
-            DbAccess dataAccess = dbAccess.RunQuery("SELECT * FROM [dbo].[Forums]");
+
+            //Connection = new SqlConnection(UniversalConnectionString);
+            //var adapter = new SqlDataAdapter("SELECT * FROM [dbo].[Forums]", Connection);
+            //var ds = new DataTable();
+            //adapter.Fill(ds);
+
+            //List<Forum> list = ds.AsEnumerable().Select(x => new Forum
+            //{
+            //    Id = x.Field<int>("id"),
+            //    Title = x.Field<string>("Title"),
+            //    Description = x.Field<string>("Description")
+            //}).ToList();
+
+            //return this;
+
+            DbAccess dataAccess = dbAccess.InitializeQuery("SELECT * FROM [dbo].[Forums]");
+            var dt = new DataTable();
+
 
             try
             {
-                dbAccess.ExecuteReader();
+                dataAccess.DataAdapter.Fill(dt);
 
-                if(dbAccess.DataReader.HasRows)
+                List<Forum> forumList = dt.AsEnumerable().Select(x => new Forum
                 {
-                    while (dbAccess.DataReader.Read())
-                    {
-                        FI.Title = dbAccess.DataReader["Title"].ToString();
-                        FI.Description = dbAccess.DataReader["Description"].ToString();
-                    }
-                }
-
+                    Id = x.Field<int>("id"),
+                    Title = x.Field<string>("Title"),
+                    Description = x.Field<string>("Description")
+                }).ToList();
 
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
-            finally 
-            {
-                dbAccess.Close();
-            }
+
 
             return View(FI);
         }

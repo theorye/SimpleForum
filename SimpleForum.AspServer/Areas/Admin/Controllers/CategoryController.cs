@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SimpleForum.AspServer.Models;
 using SimpleForum.DataAccess;
+using SimpleForum.Domain.Forum;
 
 namespace SimpleForum.AspServer.Areas.Admin.Controllers
 {
@@ -22,26 +24,7 @@ namespace SimpleForum.AspServer.Areas.Admin.Controllers
         {
             CategoryModel cM = new CategoryModel();
 
-            DbAccess dataAccess = dbAccess.RunQuery("SELECT * FROM [dbo].[Categories]");
-
-            try
-            {
-                dbAccess.ExecuteReader();
-                while (dbAccess.DataReader.Read())
-                {
-                    cM.Title = dbAccess.DataReader["Title"].ToString();
-                    cM.Description = dbAccess.DataReader["Description"].ToString();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                dbAccess.Close();
-            }
+            var list = new CategoryDataContext(dbAccess).Read();
 
             return View(cM);
         }
